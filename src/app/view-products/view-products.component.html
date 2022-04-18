@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="text-align: center;">Products List</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>S.no.</th>
+                        <th>product_id</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of productList; index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{product._id}}</td>
+                        <td>{{product.productImageFront}}"></td>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productPrice}}</td>
+                        <td>{{product.productQty}}</td>
+                        <td><button class="btn btn-warning">Edit</button></td>
+                        <td><button class="btn btn-danger">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
