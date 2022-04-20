@@ -1,33 +1,26 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2 style="text-align: center;">Products List</h2>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>S.no.</th>
-                        <th>product_id</th>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let product of productList; index as i">
-                        <td>{{i+1}}</td>
-                        <td>{{product._id}}</td>
-                        <td>{{product.productImageFront}}"></td>
-                        <td>{{product.productName}}</td>
-                        <td>{{product.productPrice}}</td>
-                        <td>{{product.productQty}}</td>
-                        <td><button class="btn btn-warning">Edit</button></td>
-                        <td><button class="btn btn-danger">Delete</button></td>
-                    </tr>
-                </tbody>
-            </table>
+<div class="col-md-12">
+    <div class="container">
+        <div class="row mt-4">
+            <h2 style="text-align: center;">Product List</h2>
+            <div class="col-sm-4 mt-5" *ngFor="let product of productList">
+                <div class="card">
+                    <img class="card-img-top" src="{{product.productImageFront}}" alt="Card image">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">
+                            {{product.productName}}
+                        </h3><br>
+                        <p>₹{{product.productPrice}} Stock:{{product.productQty}} </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-primary">Edit</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

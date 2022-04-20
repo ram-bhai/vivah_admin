@@ -15,8 +15,11 @@ export class ViewCategoryComponent implements OnInit {
       this.categoryList=data;
     })
    }
+    
+   editCategory(){}
 
-
+   deleteCategory(){}
+    
   ngOnInit(): void {
   }
 

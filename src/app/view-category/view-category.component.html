@@ -1,25 +1,25 @@
-<!-- <div class="container"> -->
-<h2 style="text-align: center;">Category List</h2>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>S.no.</th>
-            <th>category_id</th>
-            <th>Name</th>
-            <th>Image</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let category of categoryList; index as i" [style.color]="i%2 ? 'red' : 'green'">
-            <td>{{i+1}}</td>
-            <td>{{category._id}}</td>
-            <td>{{category.name}}</td>
-            <td>{{category.image}}"></td>
-            <td><button class="btn btn-warning">Edit</button></td>
-            <td><button class="btn btn-danger">Delete</button></td>
-        </tr>
-    </tbody>
-</table>
-<!-- </div> -->
+<div class="col-md-12">
+    <div class="container">
+        <div class="row mt-4">
+            <h2 style="text-align: center;">Sub-Category List</h2>
+            <div class="col-sm-4 mt-5" *ngFor="let category of categoryList">
+                <div class="card">
+                    <img class="card-img-top" src="{{category.image}}" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">
+                            {{category.name}}
+                        </h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-primary" (click)="editCategory()">Edit</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-danger" (click)="deleteCategory()">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

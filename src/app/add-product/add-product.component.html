@@ -1,1 +1,56 @@
-<p>add-product works!</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Add Product</title>
+</head>
+
+<body style="background-color:#f78f88">
+    <div class="row my-5">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h1><u>Add Products</u></h1>
+                    <br>
+                    <br>
+
+                    <label>Select Subcategory:  </label>
+                    <select [(ngModel)]="subcat" name="subCategory" id="subcat" style="width:'150px'; height: auto;">
+                        <option *ngFor="let sub of subCategory"  value="{{sub._id}}">
+                            {{sub.name}}
+                        </option>
+                    </select>
+                    <br><br>
+
+                    <div class="form-group">
+                        <label>Product Name: </label>
+                        <input [(ngModel)]="name" class="form-control" type="text" name="name" placeholder="Enter Product name">
+                    </div>
+                    <div class="form-group">
+                        <label>Product Images: </label>
+                        <input class="form-control" (change)="selectImage($event)" multiple="multiple" type="file" name="images" placeholder="Please select 4 images">
+                    </div>
+                    <div class="form-group">
+                        <label>Price: </label>
+                        <input [(ngModel)]="price" class="form-control" type="text" name="price" placeholder="Enter product price">
+                    </div>
+                    <div class="form-group">
+                        <label>Stock: </label>
+                        <input [(ngModel)]="stock" class="form-control" type="text" name="stock" placeholder="Enter product stock">
+                    </div>
+                    <div class="form-group">
+                        <label>Description: </label>
+                        <input [(ngModel)]="desc" class="form-control" type="text" name="desc" placeholder="Description of product">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn form-control btn-primary" (click)="add()">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

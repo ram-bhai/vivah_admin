@@ -1,0 +1,25 @@
+<h2 style="text-align: center;">
+
+    Customers List</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>S.no.</th>
+            <th>Name</th>
+            <th>Provider</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userList; index as i" [style.color]="i%2 ? 'red' : 'green'">
+            <td>{{i+1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.provider}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.mobile}}</td>
+            <td>{{user.address}}</td>
+        </tr>
+    </tbody>
+</table> -->
