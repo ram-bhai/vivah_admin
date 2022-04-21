@@ -14,7 +14,7 @@ export class ApiService {
   addProduct = "http://vivah-backend-api.herokuapp.com/product/add-product";
   order = "https://vivah-backend-api.herokuapp.com/order/view-order";
   deleteCat = "https://vivah-backend-api.herokuapp.com/subcategory/deletecategory"
-  customers = "http://vivah-backend-api.herokuapp.com/admin/user-list";
+  customers = "https://vivah-backend-api.herokuapp.com/admin/user-list";
   constructor(private http:HttpClient) { }
 
   signIn(email:string,password:string):Observable<any>{

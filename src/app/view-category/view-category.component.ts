@@ -1,4 +1,5 @@
 import { Component, Injector, OnInit } from '@angular/core';
+import { Router } from 'express';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -16,7 +17,9 @@ export class ViewCategoryComponent implements OnInit {
     })
    }
     
-   editCategory(){}
+   editCategory(){
+    // this.router.navigate(['edit-category',cid])
+   }
 
    deleteCategory(){}
     

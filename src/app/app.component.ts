@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from 'express';
 import { ApiService } from './api.service';
@@ -13,13 +12,15 @@ export class AppComponent {
 
 
   constructor(private api:ApiService){}
+  
+  
+  public isLoggedIn():boolean{
+    return this.api.checkToken()
+  }
 
-  // public isLoggedIn():boolean{
-  //   return this.api.checkToken()
-  // }
-
-  // public signOut(){
-  //   localStorage.removeItem('jwt-token');
-  //   this.router.navigate(['/signin'])
-  // }
+  
+   public signOut(){
+    localStorage.removeItem('jwt-token');
+    //  this.route.navigate(['/signin']);
+   }
 }
