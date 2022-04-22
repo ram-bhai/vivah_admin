@@ -12,12 +12,13 @@ export class SigninComponent implements OnInit {
   password:string = "";
 
   constructor(private api : ApiService, private router:Router) { }
-  public signed(){
+   signed(){
   
     this.api.signIn(this.email,this.password).subscribe((result)=>{
       if(result.status = "SignIn success"){
-        // localStorage.setItem('jwt-token',result.token)
+      localStorage.setItem('jwt-token',result.token)
       alert('Signed in');
+      this.router.navigate(['home']);
       }
        else
        alert('logging in failed')

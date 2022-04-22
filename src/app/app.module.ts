@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import{HttpClientModule} from '@angular/common/http';
+import{HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -16,6 +16,7 @@ import { CustomersComponent } from './customers/customers.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { TokenService } from './token.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,11 @@ import { HomepageComponent } from './homepage/homepage.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ApiService],
+  providers: [ApiService,{
+    provide: HTTP_INTERCEPTORS,
+    useClass:TokenService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

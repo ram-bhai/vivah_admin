@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from 'express';
+import { Router } from '@angular/router';
 import { ApiService } from './api.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'Vivah_Admin'; 
 
 
-  constructor(private api:ApiService){}
+  constructor(private api:ApiService,private router:Router){}
   
   
   public isLoggedIn():boolean{
@@ -21,6 +21,6 @@ export class AppComponent {
   
    public signOut(){
     localStorage.removeItem('jwt-token');
-    //  this.route.navigate(['/signin']);
+      this.router.navigate(['signin']);
    }
 }

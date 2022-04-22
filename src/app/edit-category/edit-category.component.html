@@ -1,1 +1,46 @@
-<p>edit-category works!</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Update Category</title>
+</head>
+
+<body style="background-color:#f5f3ef">
+    <div class="row my-5">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <!-- <label>Select Category:  </label>
+                        <select name="cat" id="subcat" [(ngModel)]="id" style="width:'150px'; height: auto;">
+                        <option *ngFor="let cat of Category" value="{{cat._id}}">
+                            {{cat.name}}
+                        </option>
+                    </select> -->
+                        <label>Category Name: </label>
+                        <input required [(ngModel)]="name" type="text" name="name" pattern="[a-zA-Z]+$" class="form-control" placeholder="Enter category name">
+                        <br>
+                        <!-- <span *ngIf="name.invalid && name.touched" style="color: red;">Please enter a valid name or don't leave empty.</span> -->
+                    </div>
+                    <div class="form-group">
+                        <label>Category Image: </label>
+                        <input [(ngModel)]="image" type="file" name="image" (change)="selectImage($event)" class="form-control" placeholder="Browse an image">
+                        <br>
+                        <!-- <span *ngIf="image.invalid && image.touched" style="color: red;">Please select an image or don't leave empty.</span> -->
+                    </div>
+                    <div class="form-group">
+                        <button (click)="update()" class="btn form-control btn-primary">Update</button>
+                    </div>
+                    <div class="form-group">
+                        <button (click)="Cancel()" class="btn form-control btn-primary">Back</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

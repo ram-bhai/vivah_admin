@@ -8,7 +8,7 @@ import { ApiService } from '../api.service';
 })
 export class AddProductComponent implements OnInit {
   name :any = "";
-  images: string[] = [];
+  images:any=[{}];
   price:any = "";
   stock:any = "";
   desc:any = "";
@@ -22,29 +22,43 @@ export class AddProductComponent implements OnInit {
       this.subCategory=data;
     })
    }
-
+ 
+    first:any;
+    second:any;
+    third:any;
+    fourth:any;
+    fivth:any;
 
   selectImage(event:any){
-    for(let i=0;i<4;i++){
-    if(event.target.files.length>0){
-      const file:string[]=event.target.files[i];
-      this.images=file;
-    }
+    if(event.target.files.length>=0){
+      console.log(event.target.files);
+
+      this.images = event.target.files
+      console.log(this.images[0].name)
+    
+        this.first = this.images[0]
+        this.second = this.images[1]
+        this.third = this.images[2]
+        this.fourth = this.images[3]
+      
     }
   }
 
   public add() {
     const formData= new FormData();
-    formData.append('name',this.name);
-    for(let i=0;i<4;i++){
-    formData.append('images[]',this.images[i]);}
-    formData.append('price',this.price);
-    formData.append('stock',this.stock);
-    formData.append('desc',this.desc);
-    formData.append('subcategory',this.subcat);
+    formData.append('productName',this.name);
+    formData.append('first',this.first);
+    formData.append('second',this.second);
+    formData.append('third',this.third);
+    formData.append('fourth',this.fourth);
+    
+    formData.append('productPrice',this.price);
+    formData.append('productQty',this.stock);
+    formData.append('productDescription',this.desc);
+    formData.append('categoryId',this.subcat);
     console.log(formData)
      this.api.addProducts(formData).subscribe(result=>{
-     if (result.err)
+     if (result)
        alert('Something went wrong');
 
      else

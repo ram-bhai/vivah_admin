@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@1&display=swap');
+.collapse {
+    margin-left: 100px;
+}
+
+.navbar-nav {
+    margin-right: 100px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #810000;
+}
+
+.nav-item {
+    margin-right: 50px;
+}
+
+.nav-link {
+    font-size: 25px;
+    font-weight: 3ev;
+    color: #ffbe41 !important;
+    font-family: 'Alegreya', serif;
+}
+
+.container {
+    margin-top: 0px
+}
+
+.btn:hover {
+    color: #fff
+}
+
+.input-text:focus {
+    box-shadow: 0px 0px 0px;
+    border-color: #ffbe41;
+    outline: 0px;
+    font-family: 'Alegreya', serif;
+    ;
+}
+
+.input-group-append {}
+
+.input-group {
+    margin-top: 10px;
+    width: 300px;
+    margin-left: 100px;
+    font-family: 'Alegreya', serif;
+    padding-top: 10px;
+}
+
+.form-control {
+    border: 1px solid #ffbe41;
+    font-family: 'Alegreya', serif;
+}
+
+
+/* -----------media query----------- */
+
+@media(min-width:1400px) {}
+
+@media(min-width:992px) and (max-width:1199px) {}
+
+@media(max-width:991px) {}
+
+@media(min-width:768px) and (max-width:991px) {}
+
+@media(max-width:767px) {}
+
+@media(max-width:575px) {}
+
+@media(max-width:479px) {}

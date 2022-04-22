@@ -7,14 +7,16 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class ApiService {
 
-  signin = "https://vivah-backend-api.herokuapp.com/admin/signIn";
+  signin = "http://localhost:3000/admin/signIn";
   view = "https://vivah-backend-api.herokuapp.com/subcategory/subcategoryList";
   products = "https://vivah-backend-api.herokuapp.com/product/product-list";
   addCat = "https://vivah-backend-api.herokuapp.com/subcategory/add";
-  addProduct = "http://vivah-backend-api.herokuapp.com/product/add-product";
+  addProduct = "http://localhost:3000/product/add-product";
   order = "https://vivah-backend-api.herokuapp.com/order/view-order";
-  deleteCat = "https://vivah-backend-api.herokuapp.com/subcategory/deletecategory"
+  editCate = "https://vivah-backend-api.herokuapp.com/subcategory/update-subcategory/:sid"
+  deleteCat = "http://localhost:3000/subcategory/deletecategory/:id";
   customers = "https://vivah-backend-api.herokuapp.com/admin/user-list";
+  viewOrders = "https://vivah-backend-api.herokuapp.com/order/view-order"
   constructor(private http:HttpClient) { }
 
   signIn(email:string,password:string):Observable<any>{
@@ -29,6 +31,14 @@ export class ApiService {
     return this.http.get(this.view);
   }
 
+  updateCategory(fromdata:FormData):Observable<any>{
+    return this.http.post<any>(this.editCate,fromdata);
+  }
+
+  deleteCate(CID:any):Observable<any>{
+    return this.http.post(this.deleteCat,{_id:CID});
+  }
+
   addProducts(fromdata:FormData):Observable<any>{
     return this.http.post<any>(this.addProduct,fromdata);
   }
@@ -41,9 +51,12 @@ export class ApiService {
     return this.http.get(this.customers);
   }
 
-  // deleteCategory(CID:any):Observable<any>{
-  //   return this.http.post(this.deleteCat,{_id:CID});
-  // }
+
+  viewOrdersList():Observable<any>{
+    return this.http.get(this. viewOrders);
+  }
+
+  
   
 
   checkToken():boolean{
