@@ -7,38 +7,38 @@
     <title>Add Category</title>
 </head>
 
-<body style="background-color:#f5f3ef">
-    <div class="row my-5">
-        <div class="col-md-4 offset-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <!-- <form #addCategory="ngForm" (ngSubmit)="add()"> -->
-                    <div class="form-group">
-                        <label>Select Category:  </label>
-                        <select name="cat" id="subcat" [(ngModel)]="id" style="width:'150px'; height: auto;">
+
+<div class="container my-5">
+    <div class="col-md-4 offset-md-4">
+        <div class="card">
+            <div class="card-body">
+                <!-- <form #addCategory="ngForm" (ngSubmit)="add()"> -->
+                <div class="form-group">
+                    <label>Select Category:  </label>
+                    <select name="cat" id="subcat" [(ngModel)]="id" style="width:'150px'; height: auto;">
                         <option *ngFor="let cat of Category" value="{{cat._id}}">
                             {{cat.name}}
                         </option>
                     </select>
-                        <label>Category Name: </label>
-                        <input required [(ngModel)]="name" type="text" name="name" pattern="[a-zA-Z]+$" class="form-control" placeholder="Enter category name">
-                        <br>
-                        <!-- <span *ngIf="name.invalid && name.touched" style="color: red;">Please enter a valid name or don't leave empty.</span> -->
-                    </div>
-                    <div class="form-group">
-                        <label>Category Image: </label>
-                        <input [(ngModel)]="image" type="file" name="image" (change)="selectImage($event)" class="form-control" placeholder="Browse an image">
-                        <br>
-                        <!-- <span *ngIf="image.invalid && image.touched" style="color: red;">Please select an image or don't leave empty.</span> -->
-                    </div>
-                    <div class="form-group">
-                        <button (click)="add()" class="btn form-control btn-primary">Add</button>
-                    </div>
-                    <!-- </form> -->
+                    <label>Category Name: </label>
+                    <input required [(ngModel)]="name" type="text" name="name" pattern="[a-zA-Z]+$" class="form-control" placeholder="Enter category name">
+                    <br>
+                    <!-- <span *ngIf="name.invalid && name.touched" style="color: red;">Please enter a valid name or don't leave empty.</span> -->
                 </div>
+                <div class="form-group">
+                    <label>Category Image: </label>
+                    <input [(ngModel)]="image" type="file" name="image" (change)="selectImage($event)" class="form-control" placeholder="Browse an image">
+                    <br>
+                    <!-- <span *ngIf="image.invalid && image.touched" style="color: red;">Please select an image or don't leave empty.</span> -->
+                </div>
+                <div class="form-group">
+                    <button (click)="add()" class="btn form-control btn-primary">Add</button>
+                </div>
+                <!-- </form> -->
             </div>
         </div>
     </div>
-</body>
+</div>
+
 
 </html>

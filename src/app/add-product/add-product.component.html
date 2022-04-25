@@ -7,50 +7,51 @@
     <title>Add Product</title>
 </head>
 
-<body style="background-color:#f78f88">
-    <div class="row my-5">
-        <div class="col-md-4 offset-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h1><u>Add Products</u></h1>
-                    <br>
-                    <br>
+<!-- <body style="background-color:#f8efef"> -->
+<div class="container mt-3">
+    <div class="col-md-4 offset-md-4">
+        <!-- <img src="../assets/images/Men-main.jpg" alt="Los Angeles" class="image"> -->
+        <div class="card">
+            <div class="card-body">
+                <h1><u>Add Products</u></h1>
+                <br>
+                <br>
 
-                    <label>Select Subcategory:  </label>
-                    <select [(ngModel)]="subcat" name="subCategory" id="subcat" style="width:'150px'; height: auto;">
+                <label>Select Subcategory:  </label>
+                <select [(ngModel)]="subcat" name="subCategory" id="subcat" style="width:'150px'; height: auto;">
                         <option *ngFor="let sub of subCategory"  value="{{sub._id}}">
                             {{sub.name}}
                         </option>
                     </select>
-                    <br><br>
+                <br><br>
 
-                    <div class="form-group">
-                        <label>Product Name: </label>
-                        <input [(ngModel)]="name" class="form-control" type="text" name="name" placeholder="Enter Product name">
-                    </div>
-                    <div class="form-group">
-                        <label>Product Images: </label>
-                        <input class="form-control" (change)="selectImage($event)" multiple="multiple" type="file" name="images" placeholder="Please select 4 images">
-                    </div>
-                    <div class="form-group">
-                        <label>Price: </label>
-                        <input [(ngModel)]="price" class="form-control" type="text" name="price" placeholder="Enter product price">
-                    </div>
-                    <div class="form-group">
-                        <label>Stock: </label>
-                        <input [(ngModel)]="stock" class="form-control" type="text" name="stock" placeholder="Enter product stock">
-                    </div>
-                    <div class="form-group">
-                        <label>Description: </label>
-                        <input [(ngModel)]="desc" class="form-control" type="text" name="desc" placeholder="Description of product">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn form-control btn-primary" (click)="add()">Add</button>
-                    </div>
+                <div class="form-group">
+                    <label>Product Name: </label>
+                    <input [(ngModel)]="name" class="form-control" type="text" name="name" placeholder="Enter Product name">
+                </div>
+                <div class="form-group">
+                    <label>Product Images: </label>
+                    <input class="form-control" (change)="selectImage($event)" multiple="multiple" type="file" name="images" placeholder="Please select 4 images">
+                </div>
+                <div class="form-group">
+                    <label>Price: </label>
+                    <input [(ngModel)]="price" class="form-control" type="text" name="price" placeholder="Enter product price">
+                </div>
+                <div class="form-group">
+                    <label>Stock: </label>
+                    <input [(ngModel)]="stock" class="form-control" type="text" name="stock" placeholder="Enter product stock">
+                </div>
+                <div class="form-group">
+                    <label>Description: </label>
+                    <input [(ngModel)]="desc" class="form-control" type="text" name="desc" placeholder="Description of product">
+                </div>
+                <div class="form-group">
+                    <button class="btn form-control btn-primary" (click)="add()">Add</button>
                 </div>
             </div>
         </div>
     </div>
-</body>
+</div>
+<!-- </body> -->
 
 </html>

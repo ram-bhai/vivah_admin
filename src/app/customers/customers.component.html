@@ -1,4 +1,4 @@
-<h2 style="text-align: center;">
+<!-- <h2 style="text-align: center;">
 
     Customers List</h2>
 <table class="table table-bordered">
@@ -12,16 +12,31 @@
             <th>Address</th>
         </tr>
     </thead>
-    <tbody>
-        <!-- <h1>{{userList.result}}</h1>
+    <tbody> -->
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th>S.no.</th>
+                    <th>Product-Info</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                    <th>Remove</th>
+                </tr>
+                <tbody>
+                    <!-- <h1>{{userList.result}}</h1>
         <h1>{{userList.name}}</h1> -->
-        <tr *ngFor="let user of userList.result; index as i" [style.color]="i%2?'red':'green'">
-            <td>{{i+1}}</td>
-            <td>{{user.name}}</td>
-            <td>{{user.provider}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.mobile}}</td>
-            <td>{{user.address}}</td>
-        </tr>
-    </tbody>
-</table>
+                    <tr *ngFor="let user of userList.result; index as i" [style.color]="i%2?'red':'green'">
+                        <td>{{i+1}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.provider}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.mobile}}</td>
+                        <td>{{user.address}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
